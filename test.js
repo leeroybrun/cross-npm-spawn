@@ -10,6 +10,16 @@ chai.use(chaiAsPromised);
 
 describe('CrossNpmSpawn', () => {
   it('should be able to spawn NPM process', function() {
-    return expect(spawnNpm('show', {_: ['npm', 'version']})).to.be.fulfilled;
+    this.slow(5000);
+    this.timeout(5000);
+
+    const promise = spawnNpm('show', {_: ['npm', 'version']});
+
+    return Promise.all([
+      expect(promise, 'promise').to.be.fulfilled,
+      expect(promise, 'return code').to.eventually.have.property('code', 0),
+      expect(promise, 'stdout').to.eventually.have.property('stdout').with.length.within(3, 8),
+      expect(promise, 'stderr').to.eventually.have.property('stderr', '')
+    ]);
   });
 });

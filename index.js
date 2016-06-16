@@ -34,7 +34,7 @@ module.exports = function npmSpawn(cmd, args, spawnArgs) {
   spawnArgs = spawnArgs || {};
   args = args || {};
 
-  var cliArgs = dargs(args);
+  var cliArgs = [cmd].concat(dargs(args));
 
   return new Promise((resolve, reject) => {
     let npm = spawn('npm', cliArgs, spawnArgs);
