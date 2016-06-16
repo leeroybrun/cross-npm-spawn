@@ -3,13 +3,6 @@
 const spawn = require('cross-spawn');
 const dargs = require('dargs');
 
-// https://github.com/mattdesl/spawn-npm-install/blob/master/index.js
-// https://github.com/IonicaBizau/spawno/blob/master/lib/index.js
-// https://github.com/IonicaBizau/proc-output/blob/master/lib/index.js
-// https://github.com/leeroybrun/spawn-npm/blob/master/lib/index.js
-//
-// https://www.npmjs.com/package/dargs
-
 module.exports = function npmSpawn(cmd, args, spawnArgs) {
   if (typeof args === 'undefined') {
     args = {};
