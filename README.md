@@ -12,12 +12,13 @@ npm install cross-npm-spawn
 ### `spawnNpm(command, npmArgs, spawnArgs)`
 
 #### Params
-- **String** `command`: The npm command (e.g. `"install"`).
-- **Object** `npmArgs`: An object parsed by [`oargv`](https://github.com/IonicaBizau/node-oargv).
+- **String** `command`: The npm command (e.g. `'install'`).
+- **Object** `npmArgs`: An object parsed by [`dargs`](https://www.npmjs.com/package/dargs).
 - **Object|String** `spawnArgs`: The spawn options object or just the working directory where to run the command.
 
 #### Return
 - **Promise** A promise that if resolved will returns an object with the following properties :
+
 
     {
       code: Integer,  // Return code of the NPM command. 0 if success, 1 if an error occured
@@ -37,4 +38,3 @@ npm install cross-npm-spawn
     }).catch((reason) => {
       console.log('An error occured while executing the NPM command.', reason);
     });
-    
