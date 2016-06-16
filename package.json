@@ -4,7 +4,12 @@
   "description": "Cross-platform NPM spawn",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jshint": "jshint index.js test.js --config",
+    "mocha": "mocha test.js",
+    "test": "npm run jshint && npm run mocha",
+    "release:major": "npm version major && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
@@ -19,5 +24,11 @@
   "dependencies": {
     "cross-spawn": "^4.0.0",
     "dargs": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3"
   }
 }

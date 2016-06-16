@@ -42,14 +42,14 @@ module.exports = function npmSpawn(cmd, args, spawnArgs) {
     let stdout = '';
     let stderr = '';
 
-    proc.on('error', err => {
+    npm.on('error', err => {
         return reject(err);
     });
 
-    proc.stdout.on('data', chunk => stdout += chunk);
-    proc.stderr.on('data', chunk => stderr += chunk);
+    npm.stdout.on('data', chunk => stdout += chunk);
+    npm.stderr.on('data', chunk => stderr += chunk);
 
-    proc.on('close', code => {
+    npm.on('close', code => {
       return resolve({
         stdout: stdout,
         stderr: stderr,
@@ -57,4 +57,4 @@ module.exports = function npmSpawn(cmd, args, spawnArgs) {
       });
     });
   });
-}
+};
