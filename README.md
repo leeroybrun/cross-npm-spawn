@@ -19,12 +19,13 @@ npm install cross-npm-spawn
 #### Return
 - **Promise** A promise that if resolved will returns an object with the following properties :
 
-
-    {
-      code: Integer,  // Return code of the NPM command. 0 if success, 1 if an error occured
-      stdout: String, // stdout of the NPM command
-      stderr: String  // stderr of the NPM command
-    }
+```
+{
+  code: Integer,  // Return code of the NPM command. 0 if success, 1 if an error occured
+  stdout: String, // stdout of the NPM command
+  stderr: String  // stderr of the NPM command
+}
+```
 
 ## Example
 
