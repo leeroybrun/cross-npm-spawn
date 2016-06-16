@@ -11,6 +11,14 @@
     "release:minor": "npm version minor && npm publish",
     "release:patch": "npm version patch && npm publish"
   },
+  "keywords": [
+    "npm",
+    "spawn",
+    "spawn npm",
+    "npm spawn",
+    "npm programmatically",
+    "cross platform"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leeroybrun/cross-npm-spawn.git"
