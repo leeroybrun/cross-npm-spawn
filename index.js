@@ -1,9 +1,11 @@
 'use strict';
 
-const spawn = require('cross-spawn');
+let spawn = require('cross-spawn');
 const dargs = require('dargs');
 
-module.exports = function npmSpawn(cmd, args, spawnArgs) {
+module.exports = function npmSpawn(cmd, args, spawnArgs, _spawn) {
+  spawn = _spawn || spawn;
+
   if (typeof args === 'undefined') {
     args = {};
     spawnArgs = {};
